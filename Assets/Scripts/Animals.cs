@@ -106,6 +106,7 @@ public class Animals : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         //Only checking for horse because is the only using the Ride() method
+        //POLYMORPHISM animal class can be cast to other derived types
         var horse = (this is Horse) ? (Horse)this : null;
 
         //ABSTRACTION (abstract out methods)
@@ -129,6 +130,7 @@ public class Animals : MonoBehaviour
         }
         if (other.gameObject.name == "Bone" && this is Dog)
         {
+            //POLYMORPHISM animal class can be cast to other derived types
             Dog dog = (Dog)this;
             dog.GrabToy();
             Walk(StartingPosition);
