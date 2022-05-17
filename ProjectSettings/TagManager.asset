@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Animal
   - Limit
+  - Food
+  - Ground
   layers:
   - Default
   - TransparentFX
