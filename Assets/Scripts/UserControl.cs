@@ -1,7 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.AI;
+using TMPro;
 
 public class UserControl : MonoBehaviour
 {
@@ -10,11 +8,14 @@ public class UserControl : MonoBehaviour
     private Camera GameCamera;
     private GameObject target;
     private Rigidbody playerRigidbody;
+    private string playerName;
 
     //Public Fields
     public bool isMount = false;
     public GameObject toyToFetch;
     public GameObject[] foods;
+    public TMP_InputField nameText;
+    public TextMeshPro playerNameText;
     public bool isPlayerAvailable = true;
 
     // Start is called before the first frame update
@@ -133,5 +134,13 @@ public class UserControl : MonoBehaviour
             yRandomRange,
             Random.Range(-zLowerRandomRange, -zUpperRandomRange)
             );
+    }
+     /// <summary>
+     /// Set player name or blank if no name is input in the menu
+     /// </summary>
+    public void SetPlayerName()
+    {
+        playerName = nameText.text;
+        playerNameText.text = playerName;
     }
 }
